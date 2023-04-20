@@ -21,7 +21,8 @@ def predict_placement():
     g7=int(request.form.get('g7'))
 
     result =model.predict(np.array([g1,g2,g3,g4,g5,g6,g7]).reshape(1,7))
-    return render_template('predict.html',result =str(result))
+    name=int(result)
+    return render_template('predict.html',value =name)
     
 
 
